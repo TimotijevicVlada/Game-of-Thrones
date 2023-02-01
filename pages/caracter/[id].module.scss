@@ -1,0 +1,32 @@
+@import "styles/main.module.scss";
+
+
+.loading,
+.error {
+    @include absoluteCenter;
+    font-size: 1.7rem;
+}
+
+.container {
+    width: 30rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.3rem;
+    background-color: $color-black;
+
+    .imageHeader {
+        height: 4rem;
+        @include centerElement;
+        font-size: 1.8rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .imageFooter {
+        min-height: 4rem;
+        padding: 1rem;
+    }
+}

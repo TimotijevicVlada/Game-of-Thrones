@@ -6,7 +6,7 @@ import { SingleCaracterProps } from '../../types/singleCaracter';
 
 const SingleCaracter: React.FC<SingleCaracterProps> = ({ caracter }) => {
     return (
-        <div>SingleCaracter</div>
+        <div>{caracter.name}</div>
     )
 }
 

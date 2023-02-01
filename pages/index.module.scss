@@ -1,0 +1,15 @@
+@import "styles/main.module.scss";
+
+.loading,
+.error {
+    @include absoluteCenter;
+    font-size: 1.7rem;
+}
+
+.container {
+    width: 40rem;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}

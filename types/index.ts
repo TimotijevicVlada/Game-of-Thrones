@@ -1,7 +1,10 @@
-import { Caracter } from "./caracterItem";
-
-export interface CaracterQueryProps {
-    data: Caracter[] | undefined;
-    isLoading: boolean;
-    isError: boolean;
-}
+export interface CaractersProps {
+    family: string;
+    firstName: string;
+    fullName: string;
+    id: number;
+    image: string;
+    imageUrl: string;
+    lastName: string;
+    title: string;
+  }

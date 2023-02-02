@@ -5,6 +5,15 @@
     position: sticky;
     top: 0;
     height: 4rem;
-
     @include centerElement;
+    gap: 2rem;
+
+    span {
+        font-size: 1.3rem;
+        cursor: pointer;
+
+        &.active {
+            color: $color-gold;
+        }
+    }
 }

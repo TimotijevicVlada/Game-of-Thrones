@@ -7,6 +7,7 @@ import { useQuery } from 'react-query';
 
 //types
 import { SingleCaracterProps } from '../../types/singleCaracter';
+import { Caracter } from '../../types/caracterItem';
 
 const SingleCaracter: React.FC<SingleCaracterProps> = ({ caracter }) => {
 
@@ -18,9 +19,8 @@ const SingleCaracter: React.FC<SingleCaracterProps> = ({ caracter }) => {
         return response.json();
     }
 
-    const { data, isLoading, isError } = useQuery(['caracters', router.query.id], getCatacters);
+    const { data, isLoading, isError } = useQuery<Caracter>(['caracters', router.query.id], getCatacters);
 
-    console.log("DATA", data)
 
     if (isLoading) {
         return (
@@ -37,12 +37,16 @@ const SingleCaracter: React.FC<SingleCaracterProps> = ({ caracter }) => {
     return (
         <div className={css.container}>
             <div className={css.imageHeader}>
-                {data.fullName}
+                <div className={css.nameSection}>
+                    <h2>{data?.fullName}</h2>
+                    <p>{data?.title}</p>
+                </div>
+                <div className={css.familySection}>
+                    <h2>House</h2>
+                    <p>{data?.family}</p>
+                </div>
             </div>
-            <img src={data.imageUrl} alt={data.fullName} />
-            <div className={css.imageFooter}>
-                {data.title}
-            </div>
+            <img src={data?.imageUrl} alt={data?.fullName} />
         </div>
     )
 }

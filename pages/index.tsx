@@ -3,14 +3,13 @@ import React, { useState } from 'react';
 import css from './index.module.scss';
 
 //react query
-import { useQuery } from 'react-query';
+import { useQuery, UseQueryResult } from 'react-query';
 
 //components
 import CaracterItem from '../components/CaracterItem/CaracterItem';
 
 //type
-import { CaracterQueryProps } from '../types';
-import { Caracter } from '../types/caracterItem';
+import { CaractersProps } from '../types';
 
 const Home: NextPage = () => {
 
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
     return response.json();
   }
 
-  const { data, isLoading, isError } = useQuery('caracters', getCatacters);
+  const { data, isLoading, isError } = useQuery<CaractersProps[]>('caracters', getCatacters);
 
   if (isLoading) {
     return (
@@ -37,7 +36,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={css.container}>
-      {data.map((item: Caracter, index: number) => (
+      {data?.map((item, index) => (
         <CaracterItem
           key={index}
           item={item}

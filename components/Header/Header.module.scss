@@ -7,13 +7,42 @@
     height: 4rem;
     @include centerElement;
     gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 5rem;
 
-    span {
-        font-size: 1.3rem;
-        cursor: pointer;
+    .reactLogo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.7rem;
 
-        &.active {
-            color: $color-gold;
+        svg {
+            height: 3.5rem;
+            width: 3.5rem;
+            margin-right: 1rem
+        }
+    }
+
+    .iconsWrapper {
+        @include centerElement;
+        gap: 2rem;
+        span {
+            font-size: 1.3rem;
+            cursor: pointer;
+
+            &.active {
+                color: $color-gold;
+            }
+        }
+
+        img {
+            width: 5.5rem;
+            height: 3.5rem;
+
+            &:last-child {
+                transform: scaleX(-1);
+            }
         }
     }
 }

@@ -1,0 +1,43 @@
+@import "styles/main.module.scss";
+
+.loading,
+.error {
+    @include absoluteCenter;
+    font-size: 2rem;
+}
+
+.container {
+    width: 40rem;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    .continent {
+        width: 100%;
+        aspect-ratio: 1/1;
+        display: flex;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.2rem;
+            cursor: pointer;
+        }
+
+        p {
+            @include absoluteCenter;
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        &:hover {
+            p {
+                display: block;
+            }
+        }
+    }
+}

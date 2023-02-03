@@ -35,14 +35,19 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className={css.container}>
-      {data?.map((item, index) => (
-        <CaracterItem
-          key={index}
-          item={item}
-        />
-      ))}
-    </div>
+    <>
+      <div className={css.header}>
+        <h1>Welcome to my Game of Thrones App</h1>
+      </div>
+      <div className={css.container}>
+        {data?.map((item, index) => (
+          <CaracterItem
+            key={index}
+            item={item}
+          />
+        ))}
+      </div>
+    </>
   )
 }
 

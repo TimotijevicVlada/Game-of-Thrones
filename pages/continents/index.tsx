@@ -35,25 +35,30 @@ const index = () => {
     }
 
     return (
-        <div className={css.container}>
-            {data?.map((item, index) => (
-                <div key={index} className={css.continent}>
-                    <p>{item.name}</p>
-                    {item.name === "Westeros" &&
-                        <img src={Westeros.src} alt="Westeros" />
-                    }
-                    {item.name === "Sothoryos" &&
-                        <img src={Sothoryos.src} alt="Sothoryos" />
-                    }
-                    {item.name === "Ulthos" &&
-                        <img src={Ulthos.src} alt="Ulthos" />
-                    }
-                    {item.name === "Essos" &&
-                        <img src={Essos.src} alt="Essos" />
-                    }
-                </div>
-            ))}
-        </div>
+        <>
+            <header className={css.header}>
+                <h1> Explore Continents</h1>
+            </header>
+            <div className={css.container}>
+                {data?.map((item, index) => (
+                    <div key={index} className={css.continent}>
+                        <p>{item.name}</p>
+                        {item.name === "Westeros" &&
+                            <img src={Westeros.src} alt="Westeros" />
+                        }
+                        {item.name === "Sothoryos" &&
+                            <img src={Sothoryos.src} alt="Sothoryos" />
+                        }
+                        {item.name === "Ulthos" &&
+                            <img src={Ulthos.src} alt="Ulthos" />
+                        }
+                        {item.name === "Essos" &&
+                            <img src={Essos.src} alt="Essos" />
+                        }
+                    </div>
+                ))}
+            </div>
+        </>
     )
 }
 

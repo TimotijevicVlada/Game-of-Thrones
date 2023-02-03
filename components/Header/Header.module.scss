@@ -11,22 +11,37 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 5rem;
 
+    @include respond(phone) {
+        display: flex;
+        gap: unset;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
     .reactLogo {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         font-size: 1.7rem;
 
+        @include respond(phone) {
+            display: none;
+        }
+
         svg {
             height: 3.5rem;
             width: 3.5rem;
-            margin-right: 1rem
+            margin-right: 1rem;
         }
     }
 
     .iconsWrapper {
         @include centerElement;
         gap: 2rem;
+
+        @include respond(phone) {
+            gap: 1rem;
+        }
         span {
             font-size: 1.3rem;
             cursor: pointer;
@@ -39,6 +54,11 @@
         img {
             width: 5.5rem;
             height: 3.5rem;
+
+            @include respond(phone) {
+                width: 4rem;
+                height: 3rem;
+            }
 
             &:last-child {
                 transform: scaleX(-1);

@@ -1,0 +1,42 @@
+@import "styles/main.module.scss";
+
+.loading,
+.error {
+    @include absoluteCenter;
+    font-size: 1.7rem;
+}
+
+.header {
+    width: 39rem;
+    margin: 1rem auto;
+    background-color: $color-black;
+    height: 5rem;
+    border-radius: 1.2rem;
+    @include centerElement;
+
+    @include respond(phone) {
+        width: 100%;
+        border-radius: unset;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+.container {
+    width: 40rem;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+
+    @include respond(phone) {
+        width: 100%;
+        gap: 0.5rem;
+    }
+}

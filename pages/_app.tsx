@@ -5,9 +5,9 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 //components
 import Layout from '../components/Layout/Layout';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const queryClient = new QueryClient();
 
-  const queryClient = new QueryClient();
+function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -17,9 +17,7 @@ const Caracters = () => {
         return response.json();
     }
 
-    const { data, isLoading, isError } = useQuery<CaractersProps[]>('caracters', getCatacters, {
-        cacheTime: 100000
-    });
+    const { data, isLoading, isError } = useQuery<CaractersProps[]>('caracters', getCatacters);
 
     if (isLoading) {
         return (
